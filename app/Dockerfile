@@ -5,10 +5,11 @@ RUN apk add --no-cache python make g++ bind-tools
 RUN mkdir -p /app
 WORKDIR /app
 
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+# ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
 
-COPY ./ /app/
+COPY ./package*.json /app/
 RUN npm install
+COPY ./ /app/
 
 ENTRYPOINT ["npm"]
 CMD ["start"]

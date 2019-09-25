@@ -11,3 +11,10 @@ services:
     build: ./app
     depends_on:
       - chrome
+      - pusher
+    volumes:
+      - ./reports:/app/data
+  pusher:
+    build: ./pusher
+    
+
