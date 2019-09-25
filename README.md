@@ -1,9 +1,12 @@
 # DOCKERIZED PUPPETEER! :whale:
 
-Foreground:
-`docker-compose up --build`
+Build the images:
+`docker-compose build`
 
-Background Detached Mode:
-`docker-compose up -d --build`
+Run chrome and app services:
+`docker-compose up -d chrome app`
 
-Once everything is running navigate to: `http://localhost:9222` and enjoy the show!
+In another tab, run the pusher service 
+`docker-compose up -d  pusher`
+
+Once pusher pushes the notifaction, a pdf file will be printed!
